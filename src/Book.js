@@ -16,7 +16,7 @@ class Book extends React.Component {
                              style={{
                                  width: 128,
                                  height: 193,
-                                 backgroundImage: 'url("' + book.imageLinks.thumbnail + '")'
+                                 backgroundImage: 'url("' + (book.imageLinks? book.imageLinks.thumbnail : 'https://www.udacity.com/blog/wp-content/uploads/2020/10/Udacity-Logo_Blue-1.png') + '")'
                              }}></div>
                         <div className="book-shelf-changer">
                             <select onChange={this.handleSelectChange} defaultValue={this.props.shelf}>
@@ -29,10 +29,13 @@ class Book extends React.Component {
                         </div>
                     </div>
                     <div className="book-title">{book.title}</div>
-                    <div className="book-authors">{
-                        book.authors.map((author) => (<p key={author}>{author}</p>))
+                    {
+                        book.authors ? (<div className="book-authors">{
+                            book.authors.map((author) => (<p key={author}>{author}</p>))
+                        }
+                        </div>) : ''
                     }
-                    </div>
+
                 </div>
             </li>
         );

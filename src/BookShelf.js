@@ -13,7 +13,7 @@ class BookShelf extends React.Component {
                             books.map((book) => (
                                 <Book key={book.id}
                                       book={book}
-                                      shelf={this.props.shelf}
+                                      shelf={books.find(item => item.id === book.id).shelf}
                                       updateBook={this.props.updateBook}/>
                             ))
                         }
