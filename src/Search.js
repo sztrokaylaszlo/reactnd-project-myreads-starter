@@ -24,9 +24,9 @@ class Search extends React.Component {
             <div className="search-books">
                 <div className="search-books-bar">
                     <Link to="/">
-                        <button className="close-search">
+                        <div className="close-search button">
                             Close
-                        </button>
+                        </div>
                     </Link>
                     <div className="search-books-input-wrapper">
                         <input type="text" onKeyUp={this.handleKeyUp} placeholder="Search by title or author"/>
@@ -35,7 +35,7 @@ class Search extends React.Component {
                 <div className="search-books-results">
                     <ol className="books-grid">
                         {
-                            this.state.results ? (
+                            this.state.results && this.state.results.length>0 ? (
                                 this.state.results.map((book) => (
                                     <Book key={book.id}
                                           book={book}

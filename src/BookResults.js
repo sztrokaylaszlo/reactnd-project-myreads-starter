@@ -31,7 +31,7 @@ class BookResult extends React.Component {
                         </div>
                         <div className="open-search">
                             <Link to='/search'>
-                                <button>Add a book</button>
+                                <div className='button'>Add a book</div>
                             </Link>
                         </div>
                     </div>)
